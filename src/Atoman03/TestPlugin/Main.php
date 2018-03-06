@@ -10,6 +10,8 @@ use pocketmine\command\Command;
 use pocketmine\Player;
 use pocketmine\Server;
 
+use pocketmine\utils\TextFormat as c;
+
 
 class Main extends PluginBase{
     
@@ -24,8 +26,9 @@ class Main extends PluginBase{
             if(($command->getName()) == "test"){
                 if(!(isset($args[0]))){
                     if($sender->hasPermission("tt")){
-                        $sender->sendMessage(c::RED."Usage:".c::RESET.c::GRAY." [heal:feed]");
+                        $sender->sendMessage(c::RED."Usage:".c::RESET.c::GRAY." /test <heal:feed>");
                     }
+                return true;
                 }elseif(!($sender->hasPermission("tt"))){
                     $sender->sendMessage(c::DARK_BLUE."[TestPlugin]".c::RESET." Invalid perms");
                 }
