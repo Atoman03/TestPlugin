@@ -1,0 +1,21 @@
+name: TestPlugin
+version: 0.1
+api: [3.0.0-ALPHA11]
+main: Atoman03\TestPlugin\Main
+
+commands:
+    test:
+        description: Heal yourself
+permission:
+    tt:
+        default: OP
+        descrition: Allows player to use /test
+        children:
+    tt.heal:
+        default: OP
+        description: Allows player to use /test heal
+        children:
+    tt.feed:
+        default: OP
+        description: Allows player to use /test feed
+        children:
