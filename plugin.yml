@@ -1,11 +1,15 @@
 name: TestPlugin
+author: Atoman03
 version: 0.1
 api: [3.0.0-ALPHA11]
 main: Atoman03\TestPlugin\Main
+description: Heal and feed command
 
 commands:
     test:
         description: Heal yourself
+        usage: "/test <heal:feed>"
+        permission: tt
 permission:
     tt:
         default: OP
