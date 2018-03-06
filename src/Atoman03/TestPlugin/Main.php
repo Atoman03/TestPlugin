@@ -24,30 +24,32 @@ class Main extends PluginBase{
             if(($command->getName()) == "test"){
                 if(!(isset($args[0]))){
                     if($sender->hasPermission("tt")){
-                        $sender->sendMessage("/test"." heal, feed");
+                        $sender->sendMessage(c::RED."Usage:".c::RESET.c::GRAY." [heal:feed]");
                     }
                 }elseif(!($sender->hasPermission("tt"))){
-                    $sender->sendMessage("[TestPlugin]"." Invalid perms");
+                    $sender->sendMessage(c::DARK_BLUE."[TestPlugin]".c::RESET." Invalid perms");
                 }
                 if($args[0] == "heal"){
                     if($sender->hasPermission("tt.heal")){
-                        $sender->sendMessage("[TestPlugin]"." You have been healed");
+                        $sender->sendMessage(c::DARK_BLUE."[TestPlugin]".c::RESET." You have been healed");
                         $sender->setHealth(20.0);
                     }elseif(!($sender->hasPermission("tt.heal"))){
-                        $sender->sendMessage("[TestPlugin]"." Invalid perms");
+                        $sender->sendMessage(c::DARK_BLUE."[TestPlugin]".c::RESET." Invalid perms");
                     }
                 }
                 if($args[0] == "feed"){
                     if($sender->hasPermission("tt.feed")){
-                        $sender->sendMessage("[TestPlugin]"." You have been fed");
+                        $sender->sendMessage(c::DARK_BLUE."[TestPlugin]".c::RESET." You have been fed");
                         $sender->setFood("20.0");
                     }elseif(!($sender->hasPermission("tt.feed"))){
-                        $sender->sendMessage("[TestPlugin]"." Invalid perms");
+                        $sender->sendMessage(c::DARK_BLUE."[TestPlugin]".c::RESET." Invalid perms");
                     }
                 }
             }
         }
-    }        
+        return true;
+    }
+    
     public function onDisable(){
         $this->getLogger()->warning(" Test has been disabled");
     }
